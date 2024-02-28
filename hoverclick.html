@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover & Click</title>
+    <style>
+      #colors {
+        display: none;
+      }
+      #colors-to-select:hover #colors {
+        display: block;
+      }
+      #color {
+        display: none;
+      }
+      #color-to-select:hover #color {
+        display: block;
+      }
+      li {
+        list-style-type: none;
+      }
+      body {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 30px;
+        background-color: black;
+        margin: 10%;
+      }
+
+      a {
+        color: rgb(167, 3, 3);
+        text-decoration: none;
+      }
+    </style>
+<body>
+
+    <div id="colors-to-select">
+      <a href="#">Colors</a>
+      <ul id="colors"> 
+        <li>
+          <ul id="color-to-select">
+          <a href="#"> Blue </a>
+          <ul id="color">
+            <li> <a href="#">Cobalt</a> </li>
+            <li> <a href="#">Turquoise</a> </li>
+          </ul>
+          </ul>
+        </li>
+        <li>
+          <ul id="color-to-select">
+          <a href="#"> Green </a>
+          <ul id="color">
+            <li> <a href="#">Navy</a> </li>
+            <li> <a href="#">Forest</a> </li>
+          </ul>
+          </ul>
+        </li>
+
+        <li>
+          <ul id="color-to-select">
+          <a href="#"> Red </a>
+          <ul id="color">
+            <li> <a href="#">Maroon</a> </li>
+            <li> <a href="#">Ruby</a> </li>
+          </ul>
+          </ul>
+        </li>
+
+        <li>
+          <ul id="color-to-select">
+          <a href="#"> Yellow </a>
+          <ul id="color">
+            <li> <a href="#">Sunshine</a> </li>
+            <li> <a href="#">Pale</a> </li>
+          </ul>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+    <script>
+      document.querySelector("#colors-to-select").addEventListener("click", () => {
+        var elt = document.querySelector("#colors").style.display;
+        if (elt === "none" || elt === "") {
+          document.querySelector("#colors").style.display="block";
+        } else {
+          document.querySelector("#colors").style.display="none";
+        }
+      })
+    </script>
+
+</body>
+</html>
